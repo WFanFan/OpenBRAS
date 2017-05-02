@@ -70,10 +70,10 @@ RESPONSE ParseIncoming_Session(char packet[PACKET_LENGTH], int bytesReceived) {
 			break;
 
 		case PAP:	// Parse incoming Authentication packet
-		case CHAP:
 			return ParseIncoming_Authentication(packet, bytesReceived);
+			break;	
+		case CHAP:     //Case CHAP is not supported
 			break;
-
 		default:
 			return response;
 		}
